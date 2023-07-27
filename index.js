@@ -25,3 +25,31 @@ window.addEventListener('click', (event) => {
     closeModal();
   }
 });
+
+
+  // Function to show the contact modal
+  function showContactModal() {
+    document.getElementById("contactModal").style.display = "block";
+  }
+
+  // Function to hide the contact modal
+  function hideContactModal() {
+    document.getElementById("contactModal").style.display = "none";
+  }
+
+  // Event listener for the "Contact" button in the navbar
+  document.getElementById("contactBtn").addEventListener("click", function() {
+    showContactModal();
+  });
+
+  // Event listener for the close button in the contact modal
+  document.querySelector("#contactModal .close").addEventListener("click", function() {
+    hideContactModal();
+  });
+
+  // Event listener for clicks outside the modal content to close the modal
+  window.addEventListener("click", function(event) {
+    if (event.target === document.getElementById("contactModal")) {
+      hideContactModal();
+    }
+  });
