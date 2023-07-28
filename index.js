@@ -52,4 +52,24 @@ window.addEventListener('click', (event) => {
     if (event.target === document.getElementById("contactModal")) {
       hideContactModal();
     }
+  });    // JavaScript to handle sidebar toggle on small screens
+
+  const navbar = document.getElementById('navbar');
+  let active = false;
+
+  function toggleNavbar() {
+    active = !active;
+    if (active) {
+      navbar.classList.add('active');
+    } else {
+      navbar.classList.remove('active');
+    }
+  }
+
+  document.addEventListener('click', (event) => {
+    if (event.target !== navbar && !navbar.contains(event.target)) {
+      active = false;
+      navbar.classList.remove('active');
+    }
   });
+
